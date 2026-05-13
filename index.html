@@ -1,423 +1,688 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanyam Rastogi - BPO Operations Leader | 14+ Years Experience</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
-            line-height: 1.6; 
-            color: #2d3748; 
-            background: #f8fafc;
-        }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-        
-        header { 
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%); 
-            color: white; 
-            padding: 2.5rem 0; 
-            text-align: center; 
-            position: relative;
-            overflow: hidden;
-        }
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            opacity: 0.3;
-        }
-        header .container { position: relative; z-index: 1; }
-        header h1 { 
-            font-size: clamp(2.2rem, 4.5vw, 3.5rem); 
-            font-weight: 700; 
-            margin-bottom: 0.25rem; 
-            letter-spacing: -0.02em;
-        }
-        header p { font-size: 1.15rem; font-weight: 400; opacity: 0.95; margin-bottom: 1.5rem; }
-        .contact { 
-            display: flex; 
-            justify-content: center; 
-            gap: 2rem; 
-            font-size: 1rem; 
-            flex-wrap: wrap;
-            font-weight: 500;
-        }
-        .contact a { color: #60a5fa; text-decoration: none; }
-        .contact a:hover { text-decoration: underline; }
-        
-        nav { 
-            background: rgba(255,255,255,0.95); 
-            backdrop-filter: blur(20px);
-            padding: 0.75rem 0; 
-            position: sticky; 
-            top: 0; 
-            z-index: 100;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-        nav ul { 
-            list-style: none; 
-            display: flex; 
-            justify-content: center; 
-            gap: 1rem; 
-            flex-wrap: wrap;
-        }
-        nav a { 
-            color: #475569; 
-            text-decoration: none; 
-            font-weight: 500; 
-            padding: 0.5rem 1.25rem; 
-            border-radius: 50px; 
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-        nav a:hover { 
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8); 
-            color: white; 
-            transform: translateY(-1px);
-            box-shadow: 0 8px 25px rgba(59,130,246,0.3);
-        }
-        
-        section { padding: 2.5rem 0; }
-        .card {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 16px 40px rgba(0,0,0,0.06);
-            margin-bottom: 1.5rem;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 24px 60px rgba(0,0,0,0.1);
-        }
-        h2 { 
-            color: #1e293b; 
-            text-align: center; 
-            font-size: 2rem; 
-            font-weight: 700; 
-            margin-bottom: 2rem;
-            position: relative;
-        }
-        h2::after { 
-            content: ''; 
-            display: block; 
-            width: 50px; 
-            height: 3px; 
-            background: linear-gradient(90deg, #3b82f6, #10b981); 
-            margin: 0.75rem auto 0;
-            border-radius: 2px;
-        }
-        
-        .summary { 
-            font-size: 1.1rem; 
-            text-align: center; 
-            max-width: 800px; 
-            margin: 0 auto; 
-            color: #4b5563;
-            font-weight: 400;
-        }
-        .summary strong { color: #1e293b; }
-        
-        /* Compact Timeline */
-        .timeline {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .timeline::before { 
-            content: ''; 
-            position: absolute; 
-            left: 50%; 
-            top: 0; 
-            bottom: 0; 
-            width: 2px; 
-            background: linear-gradient(to bottom, #3b82f6, #10b981); 
-            transform: translateX(-50%);
-        }
-        .timeline-item { 
-            position: relative; 
-            margin: 1.5rem 0; 
-            width: 48%; 
-            opacity: 0;
-            animation: slideInUp 0.6s ease-out forwards;
-        }
-        .timeline-item:nth-child(odd) { margin-left: 2%; }
-        .timeline-item:nth-child(even) { margin-left: 52%; }
-        @keyframes slideInUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .timeline-item:nth-child(odd) { animation-delay: 0.05s; }
-        .timeline-item:nth-child(even) { animation-delay: 0.1s; }
-        .timeline-content { 
-            background: white; 
-            padding: 1.25rem 1.5rem; 
-            border-radius: 16px; 
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08); 
-            position: relative;
-            border-top: 3px solid #3b82f6;
-        }
-        .timeline-item:nth-child(even) .timeline-content { border-top-color: #10b981; }
-        .timeline-dot { 
-            position: absolute; 
-            left: 50%; 
-            top: 0.75rem; 
-            transform: translateX(-50%); 
-            width: 12px; 
-            height: 12px; 
-            background: #3b82f6; 
-            border: 3px solid white; 
-            border-radius: 50%; 
-            box-shadow: 0 2px 8px rgba(59,130,246,0.3);
-            z-index: 2;
-        }
-        .timeline-item:hover .timeline-dot {
-            transform: translateX(-50%) scale(1.2);
-        }
-        .timeline-date { 
-            font-weight: 600; 
-            color: #3b82f6; 
-            font-size: 0.9rem; 
-            margin-bottom: 0.5rem;
-        }
-        .timeline-title { 
-            font-size: 1.2rem; 
-            font-weight: 700; 
-            color: #1e293b; 
-            margin-bottom: 0.25rem;
-        }
-        .timeline-company { 
-            color: #64748b; 
-            font-weight: 600; 
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-        .timeline-item ul {
-            list-style: none;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-        .timeline-item li {
-            padding: 0.4rem 0;
-            padding-left: 1rem;
-            position: relative;
-            color: #4b5563;
-        }
-        .timeline-item li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: #10b981;
-            font-weight: bold;
-            font-size: 0.8rem;
-        }
-        .achievement {
-            color: #059669 !important;
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-        
-        /* Skills */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        .skill-card {
-            text-align: center;
-            padding: 2rem 1.5rem;
-            border-radius: 16px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-        .skill-card:nth-child(1) { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); }
-        .skill-card:nth-child(2) { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); }
-        .skill-card:nth-child(3) { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); }
-        .skill-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-        }
-        .skill-icon { font-size: 3rem; margin-bottom: 1rem; }
-        .skill-card h3 { font-size: 1.3rem; font-weight: 700; color: #1e293b; margin-bottom: 0.75rem; }
-        .skill-card p { font-size: 1rem; color: #4b5563; line-height: 1.5; }
-        
-        footer { 
-            text-align: center; 
-            padding: 2.5rem 0 2rem;
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%); 
-            color: #cbd5e1; 
-            margin-top: 3rem;
-        }
-        footer p { margin-bottom: 0.5rem; font-size: 0.95rem; }
-        footer a { color: #60a5fa; text-decoration: none; font-weight: 500; }
-        footer a:hover { text-decoration: underline; }
-        
-        @media (max-width: 768px) {
-            .timeline::before { left: 20px; }
-            .timeline-item { width: 100%; margin-left: 45px !important; margin-right: 0 !important; margin: 1rem 0; }
-            .timeline-dot { left: -35px; }
-            .contact { flex-direction: column; gap: 0.75rem; font-size: 0.95rem; }
-            .container { padding: 0 1rem; }
-            section { padding: 2rem 0; }
-            .card { padding: 1.5rem; margin-bottom: 1rem; }
-            h2 { font-size: 1.75rem; }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanyam Rastogi - BPO Operations Leader | 14+ Years Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=IBM+Plex+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy: #0d1b2a;
+      --navy-mid: #1a2d42;
+      --navy-light: #243b55;
+      --accent: #00c2cb;
+      --accent2: #f7b731;
+      --accent3: #6c63ff;
+      --text: #e8edf3;
+      --text-muted: #8ba0b8;
+      --card-bg: rgba(26,45,66,0.85);
+      --border: rgba(0,194,203,0.18);
+      --radius: 14px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      background: var(--navy);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ─── Background mesh ─── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 10%, rgba(0,194,203,0.09) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 80%, rgba(108,99,255,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 60% 30%, rgba(247,183,49,0.05) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    /* ─── Nav ─── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; justify-content: center; gap: 2rem;
+      padding: 1rem 2rem;
+      background: rgba(13,27,42,0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--accent); }
+
+    /* ─── Layout ─── */
+    main {
+      position: relative; z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    /* ─── Hero ─── */
+    .hero {
+      text-align: center;
+      padding: 5rem 1rem 3.5rem;
+      animation: fadeUp 0.7s ease both;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(0,194,203,0.12);
+      border: 1px solid rgba(0,194,203,0.35);
+      color: var(--accent);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #e8edf3 30%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.6rem;
+    }
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.6rem;
+      line-height: 1.6;
+    }
+    .hero-contacts {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+    }
+    .hero-contacts a, .hero-contacts span {
+      color: var(--text-muted);
+      text-decoration: none;
+      display: flex; align-items: center; gap: 0.4rem;
+      transition: color 0.2s;
+    }
+    .hero-contacts a:hover { color: var(--accent); }
+
+    /* ─── Section headings ─── */
+    .section-label {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.8rem;
+    }
+    .section-label h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    section { margin-bottom: 4rem; }
+
+    /* ─── Summary card ─── */
+    .summary-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem 2rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      backdrop-filter: blur(8px);
+      font-size: 0.95rem;
+    }
+    .summary-card strong { color: var(--text); }
+
+    /* ─── Timeline ─── */
+    .timeline { display: flex; flex-direction: column; gap: 0; }
+    .tl-item {
+      display: grid;
+      grid-template-columns: 130px 1px 1fr;
+      gap: 0 1.5rem;
+      animation: fadeUp 0.5s ease both;
+    }
+    .tl-item + .tl-item { margin-top: 0; }
+    .tl-date {
+      text-align: right;
+      padding-top: 0.2rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--accent);
+      line-height: 1.5;
+      padding-bottom: 2rem;
+    }
+    .tl-line {
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .tl-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--navy);
+      flex-shrink: 0;
+      margin-top: 0.25rem;
+      box-shadow: 0 0 0 3px rgba(0,194,203,0.18);
+    }
+    .tl-connector {
+      flex: 1;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      margin-top: 4px;
+    }
+    .tl-item:last-child .tl-connector { display: none; }
+    .tl-content {
+      padding-bottom: 2.5rem;
+    }
+    .tl-content h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.15rem;
+    }
+    .tl-content .org {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-family: 'IBM Plex Mono', monospace;
+      margin-bottom: 0.6rem;
+    }
+    .tl-content ul {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 0.3rem;
+    }
+    .tl-content ul li {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      padding-left: 1rem;
+      position: relative;
+    }
+    .tl-content ul li::before {
+      content: '›';
+      position: absolute; left: 0;
+      color: var(--accent);
+    }
+    .tl-content ul li strong { color: var(--text); }
+
+    /* ─── Competencies ─── */
+    .competencies {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+    }
+    .comp-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.5rem;
+      backdrop-filter: blur(8px);
+      transition: border-color 0.25s, transform 0.2s;
+    }
+    .comp-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+    .comp-icon { font-size: 1.8rem; margin-bottom: 0.6rem; }
+    .comp-card h3 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+      letter-spacing: 0.05em;
+    }
+    .comp-card p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ─── AI PROJECTS ─── */
+    .ai-projects {
+      display: flex; flex-direction: column; gap: 1.6rem;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      transition: border-color 0.3s, transform 0.25s, box-shadow 0.3s;
+      animation: fadeUp 0.5s ease both;
+    }
+    .project-card:hover {
+      border-color: rgba(0,194,203,0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,194,203,0.12);
+    }
+
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      padding: 1.6rem 1.8rem 1.2rem;
+    }
+    .project-icon {
+      width: 52px; height: 52px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .icon-teal  { background: rgba(0,194,203,0.15); border: 1px solid rgba(0,194,203,0.3); }
+    .icon-gold  { background: rgba(247,183,49,0.12); border: 1px solid rgba(247,183,49,0.3); }
+    .icon-violet{ background: rgba(108,99,255,0.12); border: 1px solid rgba(108,99,255,0.3); }
+
+    .project-meta { flex: 1; }
+    .project-meta h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+    .project-meta .tagline {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-family: 'IBM Plex Mono', monospace;
+      margin-bottom: 0.5rem;
+    }
+    .project-meta p {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .project-tags {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      padding: 0 1.8rem 1rem;
+    }
+    .tag {
+      font-size: 0.65rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.65rem;
+      border-radius: 100px;
+      text-transform: uppercase;
+    }
+    .tag-teal   { background: rgba(0,194,203,0.1);  color: var(--accent);  border: 1px solid rgba(0,194,203,0.25); }
+    .tag-gold   { background: rgba(247,183,49,0.1); color: var(--accent2); border: 1px solid rgba(247,183,49,0.25); }
+    .tag-violet { background: rgba(108,99,255,0.1); color: #a09af7;         border: 1px solid rgba(108,99,255,0.25); }
+    .tag-gray   { background: rgba(139,160,184,0.1);color: var(--text-muted);border: 1px solid rgba(139,160,184,0.2); }
+
+    .project-features {
+      border-top: 1px solid var(--border);
+      padding: 1rem 1.8rem 1.4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem 1.5rem;
+    }
+    .feature-item {
+      display: flex; align-items: flex-start; gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .feature-item::before {
+      content: '✦';
+      color: var(--accent);
+      font-size: 0.55rem;
+      margin-top: 0.25rem;
+      flex-shrink: 0;
+    }
+
+    /* AI badge strip */
+    .ai-strip {
+      background: linear-gradient(90deg, rgba(0,194,203,0.06) 0%, rgba(108,99,255,0.06) 100%);
+      border-top: 1px solid var(--border);
+      padding: 0.75rem 1.8rem;
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .ai-strip-label {
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+    .ai-pill {
+      background: rgba(0,194,203,0.1);
+      border: 1px solid rgba(0,194,203,0.2);
+      border-radius: 100px;
+      padding: 0.15rem 0.55rem;
+      color: var(--accent);
+      font-size: 0.62rem;
+    }
+
+    /* ─── Footer ─── */
+    footer {
+      position: relative; z-index: 1;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* ─── Animations ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .tl-item:nth-child(1) { animation-delay: 0.05s; }
+    .tl-item:nth-child(2) { animation-delay: 0.12s; }
+    .tl-item:nth-child(3) { animation-delay: 0.19s; }
+    .tl-item:nth-child(4) { animation-delay: 0.26s; }
+    .tl-item:nth-child(5) { animation-delay: 0.33s; }
+
+    .project-card:nth-child(1) { animation-delay: 0.05s; }
+    .project-card:nth-child(2) { animation-delay: 0.15s; }
+    .project-card:nth-child(3) { animation-delay: 0.25s; }
+
+    /* ─── Mobile ─── */
+    @media (max-width: 620px) {
+      nav { gap: 1rem; flex-wrap: wrap; }
+      .tl-item { grid-template-columns: 90px 1px 1fr; gap: 0 1rem; }
+      .tl-date { font-size: 0.6rem; }
+      .competencies { grid-template-columns: 1fr 1fr; }
+      .project-features { grid-template-columns: 1fr; }
+      .project-header { flex-direction: column; gap: 0.8rem; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Sanyam Rastogi</h1>
-            <p>BPO Operations Leader | Assistant Manager | 14+ Years Experience</p>
-            <div class="contact">
-                <span><i class="fas fa-map-marker-alt"></i> Gurugram, Haryana | <i class="fas fa-phone"></i> +91 98118 46909</span>
-                <span><i class="fas fa-envelope"></i> sanyamrastogi999@gmail.com</span>
-                <span><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/sanyam-rastogi-121a9315a" target="_blank">LinkedIn</a></span>
-            </div>
-        </div>
-    </header>
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#summary"><i class="fas fa-user-tie"></i> Summary</a></li>
-                <li><a href="#timeline"><i class="fas fa-road"></i> Timeline</a></li>
-                <li><a href="#skills"><i class="fas fa-chart-line"></i> Competencies</a></li>
-            </ul>
-        </div>
-    </nav>
+  <nav>
+    <a href="#summary">Summary</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#ai-projects">AI Projects</a>
+    <a href="#skills">Competencies</a>
+  </nav>
 
-    <section id="summary" class="summary-section">
-        <div class="container">
-            <div class="card">
-                <h2>Professional Summary</h2>
-                <p class="summary">Dynamic BPO leader with <strong>14+ years</strong> progressing from Executive to <strong>Assistant Manager</strong>. Proven in <strong>managing 20+ agent teams</strong>, achieving <strong>&lt;2% attrition</strong>, <strong>15% efficiency gains</strong>, and <strong>100% compliance</strong>. Six Sigma certified expert in KPI/SLA mastery, skip tracing, Power BI analytics, content moderation, trust & safety. <strong>Immediate joiner</strong> ready to drive operations excellence.[file:1]</p>
-            </div>
-        </div>
+  <main>
+
+    <!-- ── HERO ── -->
+    <div class="hero">
+      <div class="hero-badge">⚡ Immediate Joiner · Gurugram, Haryana</div>
+      <h1>Sanyam Rastogi</h1>
+      <p class="hero-sub">BPO Operations Leader · Assistant Manager · 14+ Years Experience</p>
+      <div class="hero-contacts">
+        <span>📍 Gurugram, Haryana</span>
+        <a href="tel:+919811846909">📞 +91 98118 46909</a>
+        <a href="mailto:sanyamrastogi999@gmail.com">✉ sanyamrastogi999@gmail.com</a>
+        <a href="https://linkedin.com/in/sanyam-rastogi-121a9315a" target="_blank">🔗 LinkedIn</a>
+        <a href="https://sanyamrastogi999.github.io/sanyam-portfolio/" target="_blank">🌐 Portfolio</a>
+      </div>
+    </div>
+
+    <!-- ── SUMMARY ── -->
+    <section id="summary">
+      <div class="section-label"><h2>Professional Summary</h2></div>
+      <div class="summary-card">
+        Dynamic BPO leader with <strong>14+ years</strong> progressing from Executive to <strong>Assistant Manager</strong>. Proven in <strong>managing 20+ agent teams</strong>, achieving <strong>&lt;2% attrition</strong>, <strong>15% efficiency gains</strong>, and <strong>100% compliance</strong>. Six Sigma certified expert in KPI/SLA mastery, skip tracing, Power BI analytics, content moderation, and trust &amp; safety. Self-taught web developer who <strong>builds AI-assisted productivity tools</strong> used in live collections and workforce management environments. <strong>Immediate joiner</strong> ready to drive operations excellence.
+      </div>
     </section>
 
+    <!-- ── TIMELINE ── -->
     <section id="timeline">
-        <div class="container">
-            <div class="card">
-                <h2>Career Timeline</h2>
-                <div class="timeline">
-                    <!-- Present Role -->
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">May 2025 – Present</div>
-                            <div class="timeline-title">Quality Assurance Analyst</div>
-                            <div class="timeline-company">KHP Remote Pvt Ltd</div>
-                            <ul>
-                                <li class="achievement">Skip tracing & data mining expert improving RPC rates</li>
-                                <li>Quality support to collections agents & legal</li>
-                                <li>Compliance-driven investigations[file:1]</li>
-                            </ul>
-                        </div>
-                    </div>
+      <div class="section-label"><h2>Career Timeline</h2></div>
+      <div class="timeline">
 
-                    <!-- Assistant Manager -->
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="background: #10b981;"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">Jan 2021 – Nov 2024</div>
-                            <div class="timeline-title">Assistant Manager Operations</div>
-                            <div class="timeline-company">Concentrix Pvt Daksh Ltd</div>
-                            <ul>
-                                <li class="achievement"><strong>20+ AGENTS</strong> | &lt;2% attrition</li>
-                                <li class="achievement"><strong>15% EFFICIENCY</strong> | Six Sigma</li>
-                                <li>100% compliance | Content Moderation[file:1]</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Quality Analyst -->
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">May 2015 – Jan 2021</div>
-                            <div class="timeline-title">Quality Analyst</div>
-                            <div class="timeline-company">Concentrix Pvt Daksh Ltd</div>
-                            <ul>
-                                <li class="achievement"><strong>BEST QA</strong> | 11% rejection reduction</li>
-                                <li>Calibration leader | Six Sigma projects</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Senior Executive -->
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">Jul 2012 – May 2015</div>
-                            <div class="timeline-title">Senior Executive</div>
-                            <div class="timeline-company">Concentrix Pvt Daksh Ltd</div>
-                            <ul>
-                                <li>Sprint telecom email support</li>
-                                <li>New hire mentoring & onboarding</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Executive -->
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">Nov 2009 – Jul 2012</div>
-                            <div class="timeline-title">Executive Technical Support</div>
-                            <div class="timeline-company">Concentrix Pvt Daksh Ltd</div>
-                            <ul>
-                                <li class="achievement"><strong>95% FCR</strong></li>
-                                <li>Technical troubleshooting excellence</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="tl-item">
+          <div class="tl-date">May 2025<br/>Present</div>
+          <div class="tl-line"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+          <div class="tl-content">
+            <h3>Quality Assurance Analyst</h3>
+            <div class="org">KHP Remote Pvt Ltd · Remote</div>
+            <ul>
+              <li>Skip tracing &amp; data mining expert improving RPC rates</li>
+              <li>Quality support to collections agents &amp; legal</li>
+              <li>Compliance-driven investigations</li>
+            </ul>
+          </div>
         </div>
+
+        <div class="tl-item">
+          <div class="tl-date">Jan 2021<br/>Nov 2024</div>
+          <div class="tl-line"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+          <div class="tl-content">
+            <h3>Assistant Manager Operations</h3>
+            <div class="org">Concentrix Pvt Daksh Ltd</div>
+            <ul>
+              <li><strong>20+ Agents</strong> · &lt;2% attrition</li>
+              <li><strong>15% efficiency</strong> gains · Six Sigma</li>
+              <li>100% compliance · Content Moderation</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-date">May 2015<br/>Jan 2021</div>
+          <div class="tl-line"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+          <div class="tl-content">
+            <h3>Quality Analyst</h3>
+            <div class="org">Concentrix Pvt Daksh Ltd</div>
+            <ul>
+              <li><strong>Best QA Award</strong> · 11% rejection reduction</li>
+              <li>Calibration leader · Six Sigma projects</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-date">Jul 2012<br/>May 2015</div>
+          <div class="tl-line"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+          <div class="tl-content">
+            <h3>Senior Executive</h3>
+            <div class="org">Concentrix Pvt Daksh Ltd</div>
+            <ul>
+              <li>Sprint telecom email support</li>
+              <li>New hire mentoring &amp; onboarding</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-date">Nov 2009<br/>Jul 2012</div>
+          <div class="tl-line"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+          <div class="tl-content">
+            <h3>Executive Technical Support</h3>
+            <div class="org">Concentrix Pvt Daksh Ltd</div>
+            <ul>
+              <li><strong>95% FCR</strong></li>
+              <li>Technical troubleshooting excellence</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <section id="skills" class="skills-section">
-        <div class="container">
-            <div class="card">
-                <h2>Key Competencies</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <div class="skill-icon">👥</div>
-                        <h3>Leadership</h3>
-                        <p><strong>20+ Team Managed</strong><br>&lt;2% Attrition | Workforce Planning</p>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">📊</div>
-                        <h3>Analytics</h3>
-                        <p><strong>Power BI | Six Sigma</strong><br>Advanced Excel | Performance Reporting</p>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">🔍</div>
-                        <h3>Operations</h3>
-                        <p><strong>Skip Tracing Expert</strong><br>Collections | KPI/SLA Mastery</p>
-                    </div>
-                </div>
+    <!-- ── AI PROJECTS ── -->
+    <section id="ai-projects">
+      <div class="section-label"><h2>AI-Powered Projects</h2></div>
+      <div class="ai-projects">
+
+        <!-- WorkPulse -->
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-icon icon-teal">🏢</div>
+            <div class="project-meta">
+              <h3>WorkPulse</h3>
+              <div class="tagline">Workforce Management &amp; Attendance Platform</div>
+              <p>A full-featured, single-file HTML/JS workforce management app built for BPO environments. Supports role-based access for Admin, HR, Team Leader, and Agents — covering attendance, breaks, leaves, salary slips, and shift compliance.</p>
             </div>
+          </div>
+          <div class="project-tags">
+            <span class="tag tag-teal">HTML / CSS / JS</span>
+            <span class="tag tag-teal">localStorage</span>
+            <span class="tag tag-gold">Google Apps Script</span>
+            <span class="tag tag-violet">Role-Based Access</span>
+            <span class="tag tag-gray">BPO Operations</span>
+          </div>
+          <div class="project-features">
+            <div class="feature-item">Punch In/Out with idle detection</div>
+            <div class="feature-item">Break tracking &amp; utilization metrics</div>
+            <div class="feature-item">Leave management with decimal balances &amp; sandwich rules</div>
+            <div class="feature-item">Late login detection &amp; shift compliance</div>
+            <div class="feature-item">Salary slip generation</div>
+            <div class="feature-item">Google Sheets cloud sync backend</div>
+            <div class="feature-item">4-role access: Admin, HR, TL, Agent</div>
+            <div class="feature-item">Ideas / Ideation module for team feedback</div>
+          </div>
+          <div class="ai-strip">
+            <span class="ai-strip-label">AI-ASSISTED BUILD ·</span>
+            <span class="ai-pill">Claude</span>
+            <span class="ai-pill">ChatGPT</span>
+            <span class="ai-pill">Perplexity AI</span>
+          </div>
         </div>
+
+        <!-- Skip Trace Tool -->
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-icon icon-gold">🔍</div>
+            <div class="project-meta">
+              <h3>Skip Trace Report Tool</h3>
+              <div class="tagline">Collections Workflow &amp; Data Entry Automation</div>
+              <p>A structured data-entry and report-generation tool built for collections agents. Streamlines skip tracing workflows with dynamic phone-row management, shift tracking, AHT/CPH production dashboards, and one-click Word document export.</p>
+            </div>
+          </div>
+          <div class="project-tags">
+            <span class="tag tag-gold">HTML / CSS / JS</span>
+            <span class="tag tag-teal">JSZip · docx export</span>
+            <span class="tag tag-violet">Dashboard Analytics</span>
+            <span class="tag tag-gray">Collections · BPO</span>
+          </div>
+          <div class="project-features">
+            <div class="feature-item">Z1/Z2 subject frames with dynamic label switching</div>
+            <div class="feature-item">27-option relationship dropdowns for phone rows</div>
+            <div class="feature-item">Homeowner / VIN / probable address blocks</div>
+            <div class="feature-item">Shift tracking: Start, Break (timer), End Shift</div>
+            <div class="feature-item">Live AHT, CPH &amp; utilization dashboard</div>
+            <div class="feature-item">Word (.docx) export via JSZip</div>
+            <div class="feature-item">CSV / Excel export</div>
+            <div class="feature-item">Out-of-Box Notes &amp; font switcher</div>
+          </div>
+          <div class="ai-strip">
+            <span class="ai-strip-label">AI-ASSISTED BUILD ·</span>
+            <span class="ai-pill">Claude</span>
+            <span class="ai-pill">ChatGPT</span>
+            <span class="ai-pill">Perplexity AI</span>
+          </div>
+        </div>
+
+        <!-- AI Workflow card -->
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-icon icon-violet">🤖</div>
+            <div class="project-meta">
+              <h3>AI-Assisted Development Workflow</h3>
+              <div class="tagline">Self-Taught · Prompt Engineering · Rapid Prototyping</div>
+              <p>All tools above were designed and built independently using AI-assisted workflows — translating operational domain knowledge into working software without a formal development background. Iterative prompt engineering, debugging, and feature scoping done entirely in-house.</p>
+            </div>
+          </div>
+          <div class="project-tags">
+            <span class="tag tag-violet">Prompt Engineering</span>
+            <span class="tag tag-teal">Claude AI</span>
+            <span class="tag tag-teal">ChatGPT</span>
+            <span class="tag tag-gold">Perplexity AI</span>
+            <span class="tag tag-gray">Self-Taught</span>
+          </div>
+          <div class="project-features">
+            <div class="feature-item">Requirements translation from ops domain to code</div>
+            <div class="feature-item">Iterative debugging &amp; feature development</div>
+            <div class="feature-item">Single-file HTML app architecture</div>
+            <div class="feature-item">localStorage &amp; cloud backend integration</div>
+            <div class="feature-item">GitHub Pages deployment</div>
+            <div class="feature-item">Zero formal coding background</div>
+          </div>
+          <div class="ai-strip">
+            <span class="ai-strip-label">TOOLS USED ·</span>
+            <span class="ai-pill">Claude Sonnet</span>
+            <span class="ai-pill">GPT-4o</span>
+            <span class="ai-pill">Perplexity</span>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>© 2026 Sanyam Rastogi | <strong>14+ Years BPO Excellence</strong></p>
-            <p><a href="#timeline">Explore Timeline ↑</a> | Immediate Joiner</p>
+    <!-- ── COMPETENCIES ── -->
+    <section id="skills">
+      <div class="section-label"><h2>Key Competencies</h2></div>
+      <div class="competencies">
+
+        <div class="comp-card">
+          <div class="comp-icon">👥</div>
+          <h3>Leadership</h3>
+          <p><strong>20+ Team Managed</strong><br/>&lt;2% Attrition · Workforce Planning</p>
         </div>
-    </footer>
+
+        <div class="comp-card">
+          <div class="comp-icon">📊</div>
+          <h3>Analytics</h3>
+          <p><strong>Power BI · Six Sigma</strong><br/>Advanced Excel · Performance Reporting</p>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-icon">🔍</div>
+          <h3>Operations</h3>
+          <p><strong>Skip Tracing Expert</strong><br/>Collections · KPI/SLA Mastery</p>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-icon">🤖</div>
+          <h3>AI Development</h3>
+          <p><strong>Claude · ChatGPT · Perplexity</strong><br/>Tool Building · Prompt Engineering</p>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-icon">🛡️</div>
+          <h3>Trust &amp; Safety</h3>
+          <p><strong>Content Moderation</strong><br/>100% Compliance · Policy Enforcement</p>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-icon">💻</div>
+          <h3>Web Development</h3>
+          <p><strong>HTML · CSS · JavaScript</strong><br/>Google Apps Script · GitHub Pages</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Sanyam Rastogi &nbsp;·&nbsp; <strong>14+ Years BPO Excellence</strong> &nbsp;·&nbsp;
+    <a href="#timeline">Explore Timeline ↑</a> &nbsp;·&nbsp;
+    <span style="color:var(--accent)">⚡ Immediate Joiner</span>
+  </footer>
+
 </body>
 </html>
